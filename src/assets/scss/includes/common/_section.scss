@@ -1,0 +1,24 @@
+.section {
+  &--inner {
+    padding: 60px 0;
+
+    @include r(1200) {
+      padding: 35px 0
+    }
+  }
+
+  &__title {
+    font-family: $m-bold;
+    font-size: 40px;
+    margin-bottom: 35px;
+
+    @include r(1200) {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &--gray {
+    background-color: $mgray;
+  }
+}

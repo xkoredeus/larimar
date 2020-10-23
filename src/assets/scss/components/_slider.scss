@@ -1,0 +1,14 @@
+.slider {
+  position: relative;
+  margin-top: -90px;
+  &__item {
+    position: relative;
+    min-height: 768px;
+
+    &::before {
+      @include ovl;
+      background-color: $wblue;
+      opacity: .5;
+    }
+  }
+}

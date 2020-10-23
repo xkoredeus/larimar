@@ -1,0 +1,21 @@
+.button {
+  position: relative;
+  font-family: $m-med;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  background-color: $green;
+  border: 1px solid $green;
+  border-radius: 5px;
+  padding: 12px 20px;
+  outline: none;
+  box-shadow: none;
+  @include ease;
+  display: inline-block;
+
+  &:hover {
+    color: #fff;
+    background-color: $gray;
+    border-color: $gray;
+  }
+}
