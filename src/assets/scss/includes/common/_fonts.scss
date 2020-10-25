@@ -8,3 +8,7 @@ $m-bold: 'Montserrat-Bold';
 $m-ebold: 'Montserrat-ExtraBold';
 $m-black: 'Montserrat-Black';
 $m-ital: 'Montserrat-Italic';
+
+.bold {
+  font-family: $m-bold;
+}

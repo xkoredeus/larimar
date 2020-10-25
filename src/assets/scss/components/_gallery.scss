@@ -1,0 +1,13 @@
+.gallery {
+  overflow: hidden;
+
+  .owl-stage-outer {
+    overflow: visible;
+  }
+
+  &__item {
+    min-height: 465px;
+    @include cv;
+    border-radius: 10px;
+  }
+}

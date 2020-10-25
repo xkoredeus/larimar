@@ -25,6 +25,10 @@ html, body {
     overflow: hidden;
     padding-right: 15px;
   }
+
+  @include r(1400) {
+    font-size: 14px;
+  }
 }
 
 a {
@@ -37,6 +41,16 @@ a {
 
 .overlay {
   overflow: hidden;
+}
+
+.container-fluid {
+  padding-left: 100px;
+  padding-right: 100px;
+
+  @include r(1400) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 .svg-sprite {

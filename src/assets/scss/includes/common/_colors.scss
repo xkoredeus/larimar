@@ -6,6 +6,7 @@ $blue: #0B5FA6;
 $wblue: #076ABD;
 $wgray: #C4C4C4;
 $mgray: #F6F6F6;
+$lgray: #B6CBDC;
 $gray: #D5D9EE;
 $dark: #2A3136;
 $tr: transparent;
@@ -16,6 +17,10 @@ $tr: transparent;
 
 .wt {
   color: #fff;
+}
+
+.lgray {
+  color: $lgray;
 }
 
 .black {

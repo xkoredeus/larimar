@@ -1,0 +1,38 @@
+.about {
+  &__descr {
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  &-test {
+    margin-top: 70px;
+    padding-bottom: 40px;
+
+    &__item {
+      font-family: $m-bold;
+      font-size: 1.7647rem;
+      background-color: $mgray;
+      border-radius: 5px;
+      padding: 40px;
+      @include ease;
+
+      @include r(1400) {
+        padding: 20px;
+      }
+
+      &:hover {
+        color: #fff;
+        background-color: $green;
+      }
+    }
+
+    &__img {
+      @include ct;
+      min-height: 206px;
+
+      @include r(1400) {
+        min-height: 142px;
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.catalog-grid {
+  &__sale {
+    position: relative;
+    min-height: 413px;
+    border-radius: 5px;
+    overflow: hidden;
+    @include cv;
+    display: flex;
+    align-items: flex-end;
+
+    &::before {
+      @include ovl;
+      background: linear-gradient(180deg, #000000 10.86%, rgba(0, 39, 72, 0) 89.97%);
+      transform: scaleY(-1);
+      opacity: .7;
+    }
+
+    &-info {
+      position: relative;
+      color: $gray;
+      width: 100%;
+      padding: 0 36px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-link {
+      width: 31px;
+      height: 31px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      @include flex-center;
+
+      svg {
+        stroke: #fff;
+      }
+
+      &:hover {
+        background-color: $green;
+        border-color: $green;
+      }
+    }
+  }
+
+  &__item {
+    &-top {
+      position: relative;
+      min-height: 318px;
+      margin-bottom: 25px;
+      background-color: $mgray;
+      border-radius: 5px;
+      overflow: hidden;
+      @include flex-center;
+
+      img {
+        max-height: 280px;
+        width: auto;
+      }
+    }
+
+    &-title {
+      margin-bottom: 5px;
+      display: inline-block;
+    }
+    
+    &-old-price {
+      font-size: 14px;
+      text-decoration: line-through;
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    z-index: 1;
+    border-radius: 50px;
+    overflow: hidden;
+    
+    span {
+      @include ease;
+      @include flex-center;
+
+      &:first-child {
+        font-family: $m-bold;
+        font-size: 8px;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 50px;
+        margin-right: 6px;
+        padding-left: 13px;
+        transform: translateX(10px);
+        opacity: 0;
+        visibility: hidden;
+      }
+      &:last-child {
+        width: 31px;
+        height: 31px;
+        background-color: $mgray;
+        border: 1px solid $dark;
+        border-radius: 50px;
+
+        svg {
+          @include ease;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: $green;
+      span {
+        &:first-child {
+          transform: translateX(0);
+          opacity: 1;
+          visibility: visible;
+        }
+        &:last-child {
+          background-color: $green;
+          border-color: $green;
+          svg {
+            fill: #fff;
+          }
+        }
+      }
+    }
+  }
+}

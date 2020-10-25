@@ -123,6 +123,7 @@
 
         svg {
           stroke: #fff;
+          stroke-width: 2;
         }
 
         &:hover {
@@ -242,7 +243,7 @@
 
     &-value {
       font-family: $m-sbold;
-      font-size: 12px;
+      font-size: 0.8235rem;
       color: #fff;
       position: absolute;
       top: 27px;
@@ -277,7 +278,7 @@
 
         span {
           font-family: $m-med;
-          font-size: 24px;
+          font-size: 1.412rem;
         }
       }
 

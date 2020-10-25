@@ -1,3 +1,10 @@
+button {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  background-color: $tr;
+}
+
 .button {
   position: relative;
   font-family: $m-med;
@@ -17,5 +24,31 @@
     color: #fff;
     background-color: $gray;
     border-color: $gray;
+  }
+
+  &--tr {
+    color: $dark;
+    background-color: $tr;
+
+    &-white {
+      color: #fff;
+      border-color: #fff;
+    }
+  }
+}
+
+.link-arrow {
+  font-family: $m-bold;
+
+  svg {
+    stroke: $dark;
+    @include ease;
+  }
+
+  &:hover {
+     svg {
+       stroke: $green;
+       transform: translateX(5px);
+     }
   }
 }

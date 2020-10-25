@@ -9,27 +9,30 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    bottom: 0;
+    bottom: 100px;
 
     button.owl-dot {
-      width: 20px;
-      height: 20px;
-      border: 1px solid $dark;
-      border-radius: 50%;
-      background-color: $dark;
       position: relative;
+      width: 48px;
+      height: 5px;
+      background-color: #fff;
+
       @include r(1200) {
-        width: 15px;
-        height: 15px;
+        width: 25px;
+        height: 5px;
       }
 
       &:not(:last-child) {
-        margin-right: 10px;
+        margin-right: 20px;
+
+        @include r(1200) {
+          margin-right: 10px;
+        }
       }
 
       &.active {
-        border-color: $dark;
-        background-color: $dark;
+        width: 125px;
+        background-color: $green;
       }
     }
   }
@@ -37,28 +40,38 @@
     button {
       &.owl-prev,
       &.owl-next {
-        width: 54px;
-        height: 54px;
         position: absolute;
-        top: 50%;
-        border-radius: 50%;
+        width: 47px;
+        height: 47px;
+        bottom: calc(100px - calc(47px / 2));
+        border-radius: 2px;
         padding: 0;
-        border: 1px solid $dark;
+        border: 1px solid #fff;
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: translateY(-50%);
         @include ease;
 
         span {
-          width: 50px;
-          height: 50px;
+          position: relative;
+          width: 47px;
+          height: 47px;
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: $dark;
-          border-radius: 50%;
+          background-color: $tr;
+          border-radius: 2px;
           @include ease;
+
+          &::before {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 1.5px;
+            background-color: #fff;
+            opacity: 0;
+            @include ease;
+          }
         }
 
         @include r(1200) {
@@ -71,9 +84,10 @@
         }
 
         svg {
-          max-width: 17px;
-          max-height: 17px;
-          height: auto;
+          position: relative;
+          //max-width: 17px;
+          //max-height: 17px;
+          //height: auto;
           fill: none;
           stroke: #fff;
           @include ease;
@@ -83,10 +97,15 @@
         }
 
         &:hover {
-          border-color: $dark;
+          border-color: $green;
 
           span {
-            background-color: $dark;
+            background-color: $green;
+
+            &::before {
+              width: 25px;
+              opacity: .5;
+            }
           }
 
           svg {
@@ -102,16 +121,28 @@
       }
 
       &.owl-prev {
-        left: calc(-57px / 2);
+        left: 100px;
         @include r(1200) {
           left: 5px;
+        }
+
+        span {
+          &::before {
+            left: 31px;
+          }
         }
       }
 
       &.owl-next {
-        right: calc(-57px / 2);
+        right: 100px;
         @include r(1200) {
           right: 5px;
+        }
+
+        span {
+          &::before {
+            right: 31px;
+          }
         }
       }
     }
