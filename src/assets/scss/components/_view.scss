@@ -87,11 +87,22 @@
   &__buttons {
     display: flex;
 
+    @include r(495) {
+      flex-direction: column;
+    }
+
     .button {
       min-width: 193px;
 
+
+
       &:first-child {
         margin-right: 20px;
+
+        @include r(495) {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
       }
       
       &:last-child {

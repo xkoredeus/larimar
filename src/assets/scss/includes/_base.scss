@@ -10,6 +10,7 @@
 @import "common/checkbox";
 @import "common/section";
 @import "common/owl-custom";
+@import "common/popup";
 
 html, body {
   position: relative;
@@ -50,6 +51,11 @@ a {
   @include r(1400) {
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  @include r(600) {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 

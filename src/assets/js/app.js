@@ -42,3 +42,27 @@ $(() => {
         }
     });
 });
+
+$(() => {
+    $('[data-fancybox]').fancybox({
+        animationDuration: 600,
+        touch: false
+    });
+});
+
+$(() => {
+    if ( $(window).width() < 1200 ) {
+        $('.header__nav-dropdown').hide();
+        $('.header__nav-catalog-dropdown').hide();
+
+        $('.header__nav-link').on('click', function (e) {
+            e.preventDefault();
+            $(this).toggleClass('active').next('.header__nav-dropdown').slideToggle();
+        });
+
+        $('.header__nav-catalog-item').on('click', function (e) {
+           e.preventDefault();
+           $(this).toggleClass('active').next('.header__nav-catalog-dropdown').slideToggle();
+        });
+    }
+});

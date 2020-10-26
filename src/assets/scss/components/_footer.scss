@@ -26,6 +26,10 @@
     font-family: $m-bold;
     text-transform: uppercase;
     margin-bottom: 30px;
+
+    @include r(1200) {
+      margin-bottom: 15px;
+    }
   }
 
   &__catalog {
@@ -43,6 +47,10 @@
 
       @include r(1400) {
         padding: 20px 10px;
+      }
+
+      @include r(495) {
+        flex-direction: column;
       }
 
       &:first-child {
@@ -100,6 +108,10 @@
 
     &:not(:last-child) {
       margin-bottom: 20px;
+
+      @include r(1200) {
+        margin-bottom: 10px;
+      }
     }
   }
 
@@ -109,6 +121,10 @@
 
     @include r(1400) {
       max-width: 370px;
+    }
+
+    @include r(1200) {
+      margin-left: 0;
     }
   }
 
@@ -121,12 +137,22 @@
       max-width: 270px;
       display: flex;
       flex-direction: column;
+
+      @include r(495) {
+        max-width: unset;
+      }
     }
   }
 
   &__slogan {
     max-width: 553px;
     margin-left: 40px;
+
+    @include r(1200) {
+      max-width: unset;
+      text-align: center;
+      margin-left: 0;
+    }
   }
 
   &__bot {
@@ -165,6 +191,10 @@
 
     &-list {
       margin-left: 20px;
+
+      @include r(1200) {
+        margin-left: 0;
+      }
     }
   }
   

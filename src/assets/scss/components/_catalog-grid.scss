@@ -53,6 +53,10 @@
       overflow: hidden;
       @include flex-center;
 
+      @include r(600) {
+        margin-bottom: 10px;
+      }
+
       img {
         max-height: 280px;
         width: auto;

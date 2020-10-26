@@ -11,6 +11,10 @@
     justify-content: center;
     bottom: 100px;
 
+    @include r(1200) {
+      bottom: 90px;
+    }
+
     button.owl-dot {
       position: relative;
       width: 48px;
@@ -20,6 +24,10 @@
       @include r(1200) {
         width: 25px;
         height: 5px;
+
+        @include r(1200) {
+          width: 6px;
+        }
       }
 
       &:not(:last-child) {
@@ -33,6 +41,10 @@
       &.active {
         width: 125px;
         background-color: $green;
+
+        @include r(1200) {
+          width: 25px;
+        }
       }
     }
   }
@@ -102,9 +114,11 @@
           span {
             background-color: $green;
 
-            &::before {
-              width: 25px;
-              opacity: .5;
+            @include rmin(1200) {
+              &::before {
+                width: 25px;
+                opacity: .5;
+              }
             }
           }
 
@@ -112,6 +126,7 @@
             stroke: #fff;
           }
         }
+
 
         &.disabled,
         &.disabled:hover {

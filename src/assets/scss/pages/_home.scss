@@ -2,8 +2,15 @@
   position: relative;
   width: 100%;
   min-height: 582px;
+  border-radius: 5px;
+  overflow: hidden;
   @include flex-center;
-  
+  @include cv;
+
+  @include r(600) {
+    min-height: 350px;
+  }
+
   &::before {
     @include ovl;
     background-color: $blue;

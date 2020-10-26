@@ -9,5 +9,9 @@
     min-height: 465px;
     @include cv;
     border-radius: 10px;
+
+    @include r(600) {
+      min-height: 320px;
+    }
   }
 }
