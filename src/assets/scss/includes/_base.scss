@@ -59,6 +59,11 @@ a {
   }
 }
 
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
 .svg-sprite {
   position: absolute;
   bottom: 0;

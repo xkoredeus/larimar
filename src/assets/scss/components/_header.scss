@@ -429,7 +429,11 @@
   
   &__hamburger {
     min-width: 72px;
-    @include flex-center;
+    display: none;
+
+    @include r(1200) {
+      @include flex-center;
+    }
     
     span {
       position: relative;

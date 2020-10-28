@@ -12,7 +12,7 @@ $(() => {
         dots: true,
         smartSpeed: 800,
         lazyLoad: true,
-        autoplay: true,
+        // autoplay: true,
         autoplayTimeout: 5000,
         mouseDrag: false,
         touchDrag: false,

@@ -4,11 +4,55 @@
   &__item {
     position: relative;
     min-height: 768px;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+
+    @include r(600) {
+      min-height: 638px;
+    }
 
     &::before {
       @include ovl;
       background-color: $wblue;
       opacity: .4;
+    }
+
+    &-in {
+      position: relative;
+    }
+  }
+
+  &__title {
+    font-size: 4.1176rem;
+
+    @include r(1200) {
+      font-size: 2.1429rem;
+    }
+  }
+
+  &__descr {
+    font-size: 1.7647rem;
+
+    @include r(1200) {
+      font-size: 1.2857rem;
+    }
+  }
+
+  &__image {
+    @include r(600) {
+      max-height: 320px;
+    }
+  }
+
+  .owl-item {
+    height: 100%;
+  }
+
+  .section__title {
+    @include r(600) {
+      margin-bottom: 15px;
     }
   }
 }
