@@ -1,0 +1,157 @@
+.swiper-button {
+  &-prev,
+  &-next {
+    position: absolute;
+    width: 47px;
+    height: 47px;
+    top: auto;
+    bottom: calc(100px - calc(47px / 2));
+    border-radius: 2px;
+    padding: 0;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include ease;
+    z-index: 11;
+
+    &::after {
+      display: none;
+    }
+
+    span {
+      position: relative;
+      width: 47px;
+      height: 47px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $tr;
+      border-radius: 2px;
+      @include ease;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+        opacity: 0;
+        @include ease;
+      }
+    }
+
+    @include r(1200) {
+      width: 30px;
+      height: 30px;
+      span {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    svg {
+      position: relative;
+      fill: none;
+      stroke: #fff;
+      @include ease;
+      @include r(1200) {
+        max-height: 12px
+      }
+    }
+
+    &:hover {
+      border-color: $green;
+
+      span {
+        background-color: $green;
+
+        @include rmin(1200) {
+          &::before {
+            width: 25px;
+            opacity: .5;
+          }
+        }
+      }
+
+      svg {
+        stroke: #fff;
+      }
+    }
+
+    &:focus,
+    &:active {
+      box-shadow: unset;
+    }
+
+
+    &.swiper-button-disabled {
+      opacity: 0;
+    }
+  }
+
+  &-prev {
+    left: 100px;
+    @include r(1200) {
+      left: 5px;
+    }
+
+    span {
+      &::before {
+        left: 31px;
+      }
+    }
+  }
+
+  &-next {
+    right: 100px;
+    @include r(1200) {
+      right: 5px;
+    }
+
+    span {
+      &::before {
+        right: 31px;
+      }
+    }
+  }
+}
+
+.swiper-container > .swiper-pagination {
+  bottom: 90px;
+
+  .swiper-pagination-bullet {
+    width: 48px;
+    height: 5px;
+    background-color: #fff;
+    opacity: 1;
+    border-radius: 0;
+    @include ease;
+
+    @include r(1200) {
+      width: 25px;
+      height: 5px;
+
+      @include r(1200) {
+        width: 6px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      @include r(1200) {
+        margin-right: 10px;
+      }
+    }
+
+    &-active {
+      width: 125px;
+      background-color: $green;
+
+      @include r(1200) {
+        width: 25px;
+      }
+    }
+  }
+}

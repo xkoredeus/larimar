@@ -5,39 +5,30 @@ $(() => {
 });
 
 $(() => {
-    $('.slider').owlCarousel({
-        items: 1,
-        loop: true,
-        nav: true,
-        dots: true,
-        smartSpeed: 800,
-        lazyLoad: true,
-        // autoplay: true,
-        autoplayTimeout: 5000,
-        mouseDrag: false,
-        touchDrag: false,
-        navText: ["<span><svg width='17' height='20'><use xlink:href='#arrow--prev'></svg></span>", "<span><svg width='17' height='20'><use xlink:href='#arrow--next'></svg></span>"],
+
+    const mainSlider = new Swiper('.slider', {
+        effect: 'fade',
+        navigation: {
+            nextEl: '.slider .swiper-button-next',
+            prevEl: '.slider .swiper-button-prev',
+        },
+        pagination: {
+            el: '.slider .swiper-pagination',
+            clickable: true,
+        },
     });
 });
 
 $(() => {
-    $('.gallery-slider').owlCarousel({
-        dots: false,
-        loop: true,
-        touchDrag: true,
-        smartSpeed: 800,
-        mouseDrag: true,
-        lazyLoad: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        navText: ["<span><svg width='17' height='20'><use xlink:href='#arrow--prev'></svg></span>", "<span><svg width='17' height='20'><use xlink:href='#arrow--next'></svg></span>"],
-        margin: 20,
-        responsive : {
-            0 : {
-                items: 1,
+    const mainSlider = new Swiper('.gallery-slider', {
+        spaceBetween: 20,
+        slidesPerView: 2,
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
             },
-            1200 : {
-                items: 2,
+            1200: {
+                slidesPerView: 2
             },
         }
     });
@@ -66,3 +57,24 @@ $(() => {
         });
     }
 });
+
+$(() => {
+    const cardPreviewSlider = new Swiper('.card-slider--preview', {
+        spaceBetween: 10,
+        slidesPerView: 3,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        direction: 'vertical',
+    });
+    const cardMainSlider = new Swiper('.card-slider--main', {
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.card-slider--main .swiper-button-next',
+            prevEl: '.card-slider--main .swiper-button-prev',
+        },
+        thumbs: {
+            swiper: cardPreviewSlider
+        }
+    });
+})

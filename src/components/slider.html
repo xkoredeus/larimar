@@ -1,41 +1,58 @@
-<section class="slider owl-carousel">
-    <div class="slider__item" style="background-image: url({{root}}assets/img/slider__bg--1.jpg)">
-        <div class="slider__item-in container-fluid">
-            <div class="row">
-                <div class="offset-xl-1 col-xl-11">
-                    <div class="section__title">Бассейн под ключ</div>
-                    <div class="slider__descr">за 1 день <br class="d-none d-xl-inline"> от <span class="bold">21 900 ₽</span></div>
+<section class="slider swiper-container">
+    <div class="swiper-wrapper">
+        <div class="slider__item swiper-slide" style="background-image: url({{root}}assets/img/slider__bg--1.jpg)">
+            <div class="slider__item-in container-fluid">
+                <div class="row">
+                    <div class="offset-xl-1 col-xl-11">
+                        <div class="section__title">Бассейн под ключ</div>
+                        <div class="slider__descr">за 1 день <br class="d-none d-xl-inline"> от <span class="bold">21 900 ₽</span></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="slider__item" style="background-image: url({{root}}assets/img/slider__bg--2.jpg)">
-        <div class="slider__item-in container-fluid">
-            <div class="row">
-                <div class="offset-xl-1 col-xl-11">
-                    <div class="section__title">Сделано в России</div>
-                    <div class="slider__descr">Собственное производство <br class="d-none d-xl-inline"> по собственной технологии
+        <div class="slider__item swiper-slide" style="background-image: url({{root}}assets/img/slider__bg--2.jpg)">
+            <div class="slider__item-in container-fluid">
+                <div class="row">
+                    <div class="offset-xl-1 col-xl-11">
+                        <div class="section__title">Сделано в России</div>
+                        <div class="slider__descr">Собственное производство <br class="d-none d-xl-inline"> по собственной технологии
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider__item swiper-slide" style="background-image: url({{root}}assets/img/slider__bg--3.jpg)">
+            <div class="slider__item-in container-fluid">
+                <div class="row align-items-center">
+                    <div class="offset-xl-1 col-sm-4">
+                        <div class="section__title">
+                            <span class="reg">Гарантия</span> <br class="d-none d-xl-inline">
+                            <span class="slider__title">12&nbsp;месяцев</span>
+                        </div>
+                        <div class="slider__descr">на весь комплект
+                            <br class="d-none d-xl-inline"> оборудования
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <img class="slider__image img-responsive" src="{{root}}assets/img/slider__img--1.png" alt="Sale">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="slider__item" style="background-image: url({{root}}assets/img/slider__bg--3.jpg)">
-        <div class="slider__item-in container-fluid">
-            <div class="row align-items-center">
-                <div class="offset-xl-1 col-sm-4">
-                    <div class="section__title">
-                        <span class="reg">Гарантия</span> <br class="d-none d-xl-inline">
-                        <span class="slider__title">12&nbsp;месяцев</span>
-                    </div>
-                    <div class="slider__descr">на весь комплект
-                        <br class="d-none d-xl-inline"> оборудования
-                    </div>
-                </div>
-                <div class="col-sm-7">
-                    <img class="slider__image img-responsive" src="{{root}}assets/img/slider__img--1.png" alt="Sale">
-                </div>
-            </div>
-        </div>
+    <div class="swiper-button-next">
+        <span>
+            <svg width="17" height="20">
+                <use xlink:href="#arrow--next"></use>
+            </svg>
+        </span>
     </div>
+    <div class="swiper-button-prev">
+        <span>
+            <svg width="17" height="20">
+                <use xlink:href="#arrow--prev"></use>
+            </svg>
+        </span>
+    </div>
+    <div class="swiper-pagination"></div>
 </section>

@@ -1,0 +1,448 @@
+.card {
+  padding-top: 30px;
+  border-bottom: 1px solid $gray;
+
+  @include r(600) {
+    padding-top: 0;
+  }
+
+  &-slider {
+    &--preview {
+      max-height: 639px;
+      &__item {
+        min-height: 115px;
+        max-height: 115px;
+        background-color: #efefef;
+        border-radius: 5px;
+
+        @include ct;
+        @include ease;
+
+        &.swiper-slide-thumb-active {
+          opacity: .5;
+        }
+      }
+
+    }
+
+    &--main {
+      margin-left: 50px;
+      border: 1px solid $gray;
+      background-color: #fff;
+
+      @include r(1200) {
+        margin-left: 0;
+        margin-bottom: 20px;
+      }
+
+      &__item {
+        min-height: 639px;
+        @include ct;
+        @include flex-center;
+
+        @include r(1200) {
+          min-height: 439px;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+
+          max-height: 560px;
+
+          @include r(600) {
+            max-height: 320px;
+          }
+        }
+      }
+    }
+
+    &__border {
+      width: 1px;
+      height: 100%;
+      background-color: $gray;
+    }
+  }
+
+  &__subtitle {
+    font-size: 0.8824rem;
+    margin-bottom: 10px;
+  }
+
+  &__sizes {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $gray;
+  }
+
+  &__size {
+    position: relative;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      padding: 7px 15px;
+      border-radius: 3px;
+      border: 1px solid $gray;
+      display: block;
+      @include ease;
+    }
+
+    &-radio {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      z-index: -1;
+
+      &:checked + .card__size-text {
+        color: #fff;
+        background-color: $green;
+        border-color: $green;
+      }
+    }
+
+    sup {
+      color: $gray;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  &__color {
+    position: relative;
+    cursor: pointer;
+
+    &-text {
+      position: relative;
+      padding: 7px 9px;
+      border: 1px solid $gray;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      @include cv;
+      @include flex-center;
+
+      &::before {
+        @include ovl;
+        background-color: $green;
+        border: 1px solid $gray;
+        border-radius: 50%;
+        opacity: 0;
+        @include ease;
+      }
+
+      svg {
+        position: relative;
+        fill: none;
+        stroke: #fff;
+        stroke-width: 5;
+        @include ease;
+        opacity: 0;
+        transform: scale(.5);
+      }
+    }
+
+    &-radio {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      z-index: -1;
+
+      &:checked + .card__color-text {
+        &::before {
+          opacity: .6;
+        }
+
+        svg {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &-adv {
+    border-bottom: 1px solid $gray;
+
+    &__item {
+      &-top {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        @include r(1200) {
+          margin-bottom: 6px;
+        }
+
+        svg {
+          fill: none;
+          stroke: $wblue;
+          stroke-width: 7;
+        }
+      }
+
+      &-image {
+        width: 90px;
+        height: 90px;
+        border-radius: 5px;
+        margin-right: 17px;
+      }
+
+      &-title {
+        font-family: $m-bold;
+        margin-bottom: 13px;
+
+        @include r(1200) {
+          margin-bottom: 6px;
+        }
+      }
+
+      &-descr {
+        font-size: 0.8824rem;
+      }
+    }
+  }
+
+  &-opt {
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      padding: 27px 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $gray;
+      }
+
+      @include r(600) {
+        padding: 15px 0;
+        flex-direction: column;
+      }
+    }
+
+    &__col {
+      &:first-child {
+        font-family: $m-bold;
+        padding-top: 10px;
+
+        @include r(600) {
+          padding-top: 0;
+          margin-bottom: 8px;
+        }
+      }
+
+      &:last-child {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &__subrow {
+      display: flex;
+      justify-content: flex-end;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+
+    &__radio {
+      position: relative;
+      margin-bottom: 0;
+
+      &-text {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        cursor: pointer;
+      }
+
+      &-gal {
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        border: 1px solid $wgray;
+        border-radius: 5px;
+        margin-left: 30px;
+        @include flex-center;
+
+        svg {
+          position: relative;
+          fill: none;
+          stroke: $green;
+          stroke-width: 6;
+          @include ease;
+          opacity: 0;
+          transform: scale(.5);
+        }
+      }
+
+      &-price {
+        display: inline-block;
+        min-width: 125px;
+        text-align: right;
+      }
+
+      input {
+        position: absolute;
+        visibility: hidden;
+        z-index: -1;
+        opacity: 0;
+
+        &:checked + .card-opt__radio-text {
+          color: $green;
+          .card-opt__radio-gal {
+            svg {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+        }
+      }
+    }
+
+    &__total {
+      font-family: $m-bold;
+      color: $green;
+      text-align: right;
+      width: 100%;
+    }
+  }
+
+  &-order {
+    background-color: $mgray;
+    padding: 50px;
+    border-radius: 5px;
+
+    @include r(1200) {
+      padding: 30px;
+    }
+
+    @include r(600) {
+      padding: 25px 15px;
+    }
+
+    &__title {
+      font-family: $m-bold;
+      font-size: 1.7647rem;
+      margin-bottom: 40px;
+
+      @include r(1200) {
+        font-size: 1.4286rem;
+        margin-bottom: 15px;
+      }
+    }
+
+    &__image {
+      max-width: 365px;
+      height: auto;
+
+      @include r(1200) {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &__size {
+      max-width: 317px;
+
+      &-row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 14px;
+        border-bottom: 1px solid $gray;
+        margin-bottom: 15px;
+      }
+    }
+
+    &__circle {
+      width: 49px;
+      height: 49px;
+      border-radius: 50%;
+      @include cv;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+
+      @include r(1200) {
+        margin-right: 25px;
+      }
+
+      &-button {
+        width: 34px;
+        min-width: 34px;
+        height: 34px;
+        background-color: #fff;
+        border: 1px solid $gray;
+        border-radius: 50%;
+        @include flex-center;
+        margin-left: 20px;
+
+        @include r(1200) {
+          margin-left: 10px;
+        }
+
+        svg {
+          stroke: $gray;
+          stroke-width: 2;
+          @include ease;
+        }
+
+        &:hover {
+          background-color: $green;
+          border-color: $green;
+
+          svg {
+            stroke: #fff;
+          }
+        }
+      }
+    }
+
+    &__delim {
+      margin: 40px 0;
+      width: 100%;
+      height: 1px;
+      background-color: $gray;
+    }
+
+    &__total {
+      @include r(600) {
+        width: 100%;
+      }
+    }
+
+    &__button {
+      margin-left: 40px;
+      @include rmin(1200) {
+        min-width: 319px;
+      }
+
+      @include r(600) {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+}
