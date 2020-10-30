@@ -1,0 +1,22 @@
+.blog {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-link {
+      font-family: $m-med;
+      font-size: 1.1765rem;
+      border-bottom: 1px solid $dark;
+      margin-bottom: 15px;
+
+      &:hover {
+        border-bottom-color: $green;
+      }
+    }
+
+    &-descr {
+      font-size: 0.8824rem;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+.match {
+  &__item {
+    &-top {
+      position: relative;
+      min-height: 318px;
+      margin-bottom: 25px;
+      background-color: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      @include flex-center;
+
+      @include r(600) {
+        margin-bottom: 10px;
+      }
+
+      img {
+        max-height: 280px;
+        width: auto;
+      }
+    }
+
+    &-title {
+      margin-bottom: 5px;
+      display: inline-block;
+    }
+
+    &-old-price {
+      font-size: 14px;
+      text-decoration: line-through;
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    z-index: 1;
+    border-radius: 50px;
+    overflow: hidden;
+
+    span {
+      @include ease;
+      @include flex-center;
+
+      &:first-child {
+        font-family: $m-bold;
+        font-size: 8px;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 50px;
+        margin-right: 6px;
+        padding-left: 13px;
+        transform: translateX(10px);
+        opacity: 0;
+        visibility: hidden;
+      }
+      &:last-child {
+        width: 31px;
+        height: 31px;
+        background-color: $tr;
+        border: 1px solid $dark;
+        border-radius: 50px;
+
+        svg {
+          @include ease;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: $green;
+      span {
+        &:first-child {
+          transform: translateX(0);
+          opacity: 1;
+          visibility: visible;
+        }
+        &:last-child {
+          background-color: $green;
+          border-color: $green;
+          svg {
+            fill: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-button {
+    &-next,
+    &-prev {
+      position: relative;
+      bottom: -20px;
+      top: auto;
+      border: 1px solid $dark;
+
+      @include r(1200) {
+        bottom: -10px;
+      }
+
+      svg {
+        stroke: $dark;
+      }
+
+      &:hover {
+        border-color: $green;
+
+        svg {
+          stroke: #fff;
+        }
+      }
+    }
+
+    &-next {
+      right: auto;
+      margin-left: 50px;
+
+      @include r(1200) {
+        margin-left: 5px
+      }
+    }
+
+    &-prev {
+      left: auto;
+    }
+  }
+
+  .section__title {
+    @include r(600) {
+      font-size: 1.2857rem;
+    }
+  }
+}

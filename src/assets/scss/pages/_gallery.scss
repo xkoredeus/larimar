@@ -1,0 +1,58 @@
+.gallery {
+  &__item {
+    &-image {
+      position: relative;
+      min-height: 318px;
+      margin-bottom: 25px;
+      background-color: $gray;
+      border-radius: 5px;
+      overflow: hidden;
+      @include cv;
+      @include flex-center;
+      cursor: pointer;
+
+      &::before {
+        @include ovl;
+        background-color: $green;
+        opacity: 0;
+        @include ease;
+      }
+
+      @include r(600) {
+        min-height: 220px;
+        margin-bottom: 10px;
+      }
+
+      svg {
+        position: relative;
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2;
+        @include ease;
+
+        transform: scale(.5);
+        opacity: 0;
+      }
+
+      &:hover {
+        &::before {
+          opacity: .7;
+        }
+
+        svg {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    }
+
+    &-title {
+      font-family: $m-bold;
+      margin-bottom: 5px;
+    }
+
+    &-descr {
+      font-size: 0.8824rem;
+    }
+  }
+}

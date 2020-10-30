@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  @include r(1400) {
+  @include r(1500) {
     padding: 27px 20px;
   }
 
@@ -121,14 +121,14 @@
     stroke-width: 2;
 
 
-    @include r(1400) {
+    @include r(1500) {
       right: -50px;
       bottom: -60px;
     }
 
     &--ellipse {
       right: -160px;
-      @include r(1400) {
+      @include r(1500) {
         right: -200px;
       }
     }

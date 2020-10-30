@@ -1,0 +1,21 @@
+.gallery {
+  &-slider {
+    &__wrp {
+      overflow: hidden;
+
+      .swiper-container {
+        overflow: visible;
+      }
+    }
+
+    &__item {
+      min-height: 465px;
+      @include cv;
+      border-radius: 10px;
+
+      @include r(600) {
+        min-height: 320px;
+      }
+    }
+  }
+}

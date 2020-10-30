@@ -10,6 +10,7 @@
 @import "common/section";
 @import "common/swiper-custom";
 @import "common/popup";
+@import "common/quantity";
 
 html, body {
   position: relative;
@@ -26,7 +27,7 @@ html, body {
     padding-right: 15px;
   }
 
-  @include r(1400) {
+  @include r(1500) {
     font-size: 14px;
   }
 }
@@ -47,7 +48,7 @@ a {
   padding-left: 100px;
   padding-right: 100px;
 
-  @include r(1400) {
+  @include r(1500) {
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -66,4 +67,14 @@ a {
 .svg-sprite {
   position: absolute;
   bottom: 0;
+}
+
+/* Custom animation */
+.fancybox-fx-slide-in-in.fancybox-slide--next,
+.fancybox-fx-slide-in-in.fancybox-slide--previous {
+  transform: translateX(100%)
+}
+
+.fancybox-fx-slide-in-in.fancybox-slide--current {
+  transform: translateX(0)
 }

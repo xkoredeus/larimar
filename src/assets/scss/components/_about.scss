@@ -16,7 +16,7 @@
       padding: 40px;
       @include ease;
 
-      @include r(1400) {
+      @include r(1500) {
         padding: 20px;
       }
 
@@ -30,7 +30,7 @@
       @include ct;
       min-height: 206px;
 
-      @include r(1400) {
+      @include r(1500) {
         min-height: 142px;
       }
     }

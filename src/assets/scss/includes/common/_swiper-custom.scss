@@ -14,6 +14,7 @@
     align-items: center;
     @include ease;
     z-index: 11;
+    outline: none;
 
     &::after {
       display: none;

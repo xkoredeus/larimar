@@ -12,7 +12,7 @@
       &__item {
         min-height: 115px;
         max-height: 115px;
-        background-color: #efefef;
+        background-color: $llgray;
         border-radius: 5px;
 
         @include ct;
@@ -45,13 +45,30 @@
         }
 
         img {
-          max-width: 100%;
+          max-width: 80%;
           height: auto;
-
           max-height: 560px;
 
-          @include r(600) {
+          @include r(1200) {
             max-height: 320px;
+            max-width: 90%;
+          }
+        }
+      }
+
+      .swiper-button {
+        &-prev,
+        &-next {
+          background-color: $green;
+          border-color: $green;
+          bottom: 20px;
+
+          @include rmin(1200) {
+            display: none;
+          }
+
+          svg {
+            stroke: #fff;
           }
         }
       }
@@ -322,6 +339,17 @@
     }
   }
 
+  &__subtitle {
+    font-family: $m-bold;
+    font-size: 1.7647rem;
+    margin-bottom: 40px;
+
+    @include r(1200) {
+      font-size: 1.4286rem;
+      margin-bottom: 15px;
+    }
+  }
+
   &-order {
     background-color: $mgray;
     padding: 50px;
@@ -333,17 +361,6 @@
 
     @include r(600) {
       padding: 25px 15px;
-    }
-
-    &__title {
-      font-family: $m-bold;
-      font-size: 1.7647rem;
-      margin-bottom: 40px;
-
-      @include r(1200) {
-        font-size: 1.4286rem;
-        margin-bottom: 15px;
-      }
     }
 
     &__image {
@@ -442,6 +459,167 @@
       @include r(600) {
         width: 100%;
         margin-left: 0;
+      }
+    }
+  }
+
+  &-info {
+    &__link {
+      font-size: 0.8824rem;
+      color: $green;
+      border-bottom: 1px solid $green;
+
+      &:hover {
+        border-color: $tr;
+      }
+    }
+
+    &__border {
+      margin: 26px 0;
+      width: 100%;
+      height: 1px;
+      background-color: $gray;
+    }
+
+    &__table {
+      width: 100%;
+      margin-bottom: 50px;
+
+      @include r(1200) {
+        margin-bottom: 25px;
+      }
+
+      &-row {
+        width: 100%;
+        padding: 15px 29px;
+        border-bottom: 1px solid $gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    &__price {
+      @include r(600) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    &__bot {
+      .button {
+        @include r(600) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  &__label {
+    position: absolute;
+    font-size: 0.8824rem;
+    color: #fff;
+    top: 15px;
+    right: 16px;
+    padding: 11px 20px;
+    @include flex-center;
+    border-radius: 5px;
+    z-index: 12;
+
+    svg {
+      fill: none;
+      stroke: #fff;
+      stroke-width: 6;
+    }
+
+    &--green {
+      background-color: #6ACF50;
+    }
+  }
+
+  &-tabs {
+    .tabs {
+      &__list {
+        display: flex;
+        margin-bottom: 10px;
+
+        @include r(1200) {
+          flex-wrap: wrap;
+        }
+
+        @include r(600) {
+          flex-direction: column;
+        }
+
+        &-item {
+          position: relative;
+          font-size: 1.1765rem;
+          text-align: center;
+          min-width: 337px;
+          padding: 13px 25px;
+          background-color: $llgray;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          cursor: pointer;
+          @include cubic2;
+
+          @include r(600) {
+            font-size: 1.0714rem;
+            border-radius: 5px;
+            padding: 10px 15px;
+          }
+
+          &::before {
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 10px;
+            left: 50%;
+            bottom: -5px;
+            background-color: $green;
+            transform: translateX(-50%) rotate(45deg);
+            opacity: 0;
+            @include cubic2;
+
+            @include r(600) {
+              display: none;
+            }
+          }
+
+
+          &:not(:last-child) {
+            margin-right: 7px;
+
+            @include r(600) {
+              margin-right: 0;
+              margin-bottom: 3px;
+            }
+          }
+
+          &.active {
+            color: #fff;
+            background-color: $green;
+
+            &::before {
+              opacity: 1;
+            }
+          }
+
+          @include r(1200) {
+            min-width: unset;
+          }
+        }
+      }
+
+      &__content-item {
+        font-size: 0.8824rem;
+        line-height: 1.5;
+        background-color: $lllgray;
+        padding: 50px;
+
+        @include r(1200) {
+          padding: 20px;
+        }
       }
     }
   }

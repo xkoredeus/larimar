@@ -15,6 +15,20 @@
     color: #fff;
     display: flex;
 
+    &-logo {
+      position: absolute;
+      left: 7px;
+      top: 2px;
+
+      @include rmin(1200) {
+        display: none;
+      }
+
+      &-icon {
+        fill: #fff;
+      }
+    }
+
     @include r(1200) {
       flex-direction: column;
       max-width: 570px;
@@ -34,7 +48,8 @@
 
       .fancybox-close-small {
         color: #fff;
-        border: 1px solid #fff;
+        border: none;
+        border-left: 1px solid $dark;
       }
     }
 
